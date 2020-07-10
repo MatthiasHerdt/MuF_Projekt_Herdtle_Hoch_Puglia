@@ -1,0 +1,2 @@
+rootProject.name='MuF_Projekt_Herdtle_Hoch_Puglia'
+include ':app'
