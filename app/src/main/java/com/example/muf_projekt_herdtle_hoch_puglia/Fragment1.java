@@ -14,10 +14,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import java.util.ArrayList;
+
 public class Fragment1 extends Fragment {
 
     private MainViewModel mainViewModel;
     private Observer<SensorData> observer;
+    private ArrayList<Memory> datalist;
+    private int count;
 
     @Nullable
     @Override
@@ -55,6 +59,8 @@ public class Fragment1 extends Fragment {
                         version.setText("Version" + sensorData.getSensor().getVersion());
                         xyz.setText(
                                 "x:" + sensorData.getP1() + "y:" +sensorData.getP2() + "z:" + sensorData.getP3());
+                        datalist.add(new Memory(count, sensorData.getP1(),sensorData.getP2(),sensorData.getP3(),System.currentTimeMillis()));
+                        count = count + 1;
 
                     };
 
@@ -70,6 +76,8 @@ public class Fragment1 extends Fragment {
                 xyz.setText(
                         "x: 0" + " y:0" + " z:0" );
                 mainViewModel.sensorData.removeObserver(observer);
+                //datalist.clear();
+                //count = 0;
 
                 observer = null;
             }
