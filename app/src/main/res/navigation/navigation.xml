@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/startFragment">
+    app:startDestination="@+id/startFragment">
 
     <fragment
         tools:layout="@layout/fragment_1"
@@ -17,7 +18,7 @@
     <fragment
         tools:layout="@layout/fragment_2"
         android:id="@+id/zweitesFragment"
-        android:name="com.example.muf_projekt_herdtle_hoch_puglia.Fragment2"
+     android:name="com.example.muf_projekt_herdtle_hoch_puglia.Fragment2"
         android:label="SecondFragment"/>
 
 </navigation>
