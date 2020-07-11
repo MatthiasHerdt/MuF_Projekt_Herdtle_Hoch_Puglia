@@ -39,7 +39,7 @@ public class Fragment1 extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sensorViewModel =new ViewModelProvider(
+        sensorViewModel = new ViewModelProvider(
                 getActivity(),
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())
         ).get(SensorViewModel.class);
@@ -82,7 +82,8 @@ public class Fragment1 extends Fragment {
                         xyz.setText("x:" + sensorData.getP1() + "y:" +sensorData.getP2() + "z:" + sensorData.getP3());
                         Memory tempmemory = new Memory(dataname, count, sensorData.getP1(),sensorData.getP2(),sensorData.getP3(),System.currentTimeMillis());
                         datalist.add(tempmemory);
-                        Log.d(TAG,"on Create: Daten: "+datalist.get(count).getX());
+                        // kann weg...
+                        //Log.d(TAG,"on Create: Daten: "+ datalist.get(count).getX());
                         count=count+1;
                         // eingabe in die Datenbank
                         sensorViewModel.setSensor(tempmemory);
