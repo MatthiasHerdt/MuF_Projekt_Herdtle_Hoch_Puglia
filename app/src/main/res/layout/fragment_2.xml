@@ -6,8 +6,55 @@
 
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Feedback"
+        android:textSize="35dp"
+        android:gravity="center"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/DataChartX"
+        android:layout_width="match_parent"
+        android:layout_height="140dp" />
+
+    <Button
+        android:id="@+id/BeschleunigungX"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Beschleunigungen in X "
+        android:layout_gravity="center"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/DataChartY"
+        android:layout_width="match_parent"
+        android:layout_height="140dp" />
+
+    <Button
+        android:id="@+id/BeschleunigungY"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Beschleunigungen in Y "
+        android:layout_gravity="center"/>
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/DataChartZ"
+        android:layout_width="match_parent"
+        android:layout_height="140dp" />
+
+    <Button
+        android:id="@+id/BeschleunigungZ"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Beschleunigungen in Z "
+        android:layout_gravity="center"/>
+
+
+    <Button
+        android:id="@+id/BackToHome"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="Visuelles Feedback"/>
+        android:layout_gravity="right"
+        android:text="Home" />
 
 
 

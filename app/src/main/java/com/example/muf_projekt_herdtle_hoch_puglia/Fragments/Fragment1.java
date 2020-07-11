@@ -1,5 +1,6 @@
 package com.example.muf_projekt_herdtle_hoch_puglia.Fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,12 @@ import com.example.muf_projekt_herdtle_hoch_puglia.MainViewModel;
 import com.example.muf_projekt_herdtle_hoch_puglia.Memory;
 import com.example.muf_projekt_herdtle_hoch_puglia.R;
 import com.example.muf_projekt_herdtle_hoch_puglia.Data.SensorData;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 
 import java.util.ArrayList;
@@ -28,7 +35,7 @@ public class Fragment1 extends Fragment {
     private MainViewModel mainViewModel;
     private Observer<SensorData> observer;
     private ArrayList<Memory> datalist;
-    private int count;
+    private int count = 0;
 
     @Nullable
     @Override
@@ -57,6 +64,22 @@ public class Fragment1 extends Fragment {
                 this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(MainViewModel.class);
 
+        // Line Chart for LiveData
+
+        LineChart lineChart = view.findViewById(R.id.LiveDataChart);
+        Description desc_x = new Description();
+        desc_x.setText("");
+        lineChart.setDescription(desc_x);
+        lineChart.setDrawGridBackground(false);
+
+        ArrayList<Entry> values1 = new ArrayList<Entry>();
+        ArrayList<Entry> values2 = new ArrayList<Entry>();
+        ArrayList<Entry> values3 = new ArrayList<Entry>();
+        ArrayList<ILineDataSet> all = new ArrayList<>();
+
+
+        //Click Listener Start here
+
         StartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,8 +90,55 @@ public class Fragment1 extends Fragment {
                         version.setText("Version" + sensorData.getSensor().getVersion());
                         xyz.setText(
                                 "x:" + sensorData.getP1() + "y:" +sensorData.getP2() + "z:" + sensorData.getP3());
-                       // datalist.add(new Memory(count, sensorData.getP1(),sensorData.getP2(),sensorData.getP3(),System.currentTimeMillis()));
-                        //count = count + 1;
+                        //datalist.add(new Memory(count, sensorData.getP1(),sensorData.getP2(),sensorData.getP3(),System.currentTimeMillis()));
+                        values1.add(new Entry(count,sensorData.getP1()));
+                        values2.add(new Entry(count, sensorData.getP2()));
+                        values3.add(new Entry(count, sensorData.getP3()));
+
+                        LineDataSet lineDataSetX = new LineDataSet(values1,"Data Set X");
+                        lineDataSetX.setColor(Color.GREEN);
+                        lineDataSetX.setDrawCircles(false);
+                        lineDataSetX.setDrawCircleHole(false);
+                        lineDataSetX.setDrawValues(false);
+
+                        LineDataSet lineDataSetY = new LineDataSet(values2,"Data Set Y");
+                        lineDataSetY.setColor(Color.BLUE);
+                        lineDataSetY.setDrawCircles(false);
+                        lineDataSetY.setDrawCircleHole(false);
+                        lineDataSetY.setDrawValues(false);
+
+                        LineDataSet lineDataSetZ = new LineDataSet(values3,"Data Set Z");
+                        lineDataSetZ.setColor(Color.BLACK);
+                        lineDataSetZ.setDrawCircles(false);
+                        lineDataSetZ.setDrawCircleHole(false);
+                        lineDataSetZ.setDrawValues(false);
+
+                        //all.add(lineDataSetX);
+                        //all.add(lineDataSetY);
+                        //all.add(lineDataSetZ);
+
+
+                        LineData data1 = new LineData(lineDataSetX);
+
+                        LineData data2 = new LineData(lineDataSetY);
+                        LineData data3 = new LineData(lineDataSetZ);
+
+                        lineChart.setData(data1);
+                        lineChart.invalidate();
+                        lineChart.setData(data2);
+                        lineChart.invalidate();
+                        lineChart.setData(data3);
+                        lineChart.invalidate();
+
+
+                        //  Entscheiden ob alle Senoren oder nur einer
+
+
+
+
+
+
+                        count = count + 1;
 
                     };
 
