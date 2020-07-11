@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.muf_projekt_herdtle_hoch_puglia.MainViewModel;
 import com.example.muf_projekt_herdtle_hoch_puglia.Memory;
@@ -48,6 +49,7 @@ public class Fragment1 extends Fragment {
 
         final Button StartButton = view.findViewById(R.id.startButton);
         final Button StopButton = view.findViewById(R.id.stopButton);
+        final Button FeedbackButton = view.findViewById(R.id.feedbackButton);
 
         observer = null;
 
@@ -65,8 +67,8 @@ public class Fragment1 extends Fragment {
                         version.setText("Version" + sensorData.getSensor().getVersion());
                         xyz.setText(
                                 "x:" + sensorData.getP1() + "y:" +sensorData.getP2() + "z:" + sensorData.getP3());
-                        datalist.add(new Memory(count, sensorData.getP1(),sensorData.getP2(),sensorData.getP3(),System.currentTimeMillis()));
-                        count = count + 1;
+                       // datalist.add(new Memory(count, sensorData.getP1(),sensorData.getP2(),sensorData.getP3(),System.currentTimeMillis()));
+                        //count = count + 1;
 
                     };
 
@@ -86,6 +88,14 @@ public class Fragment1 extends Fragment {
                 //count = 0;
 
                 observer = null;
+            }
+        });
+
+        FeedbackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Navigation.findNavController(view).navigate(R.id.action_startFragment_to_zweitesFragment);
             }
         });
 
