@@ -2,6 +2,8 @@ package com.example.muf_projekt_herdtle_hoch_puglia;
 
 import android.app.Application;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -93,5 +95,7 @@ public class MainViewModel extends AndroidViewModel {
             };
         }
     }
+
+
 
 }

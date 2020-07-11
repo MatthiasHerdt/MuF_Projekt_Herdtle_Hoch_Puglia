@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -104,12 +105,14 @@ public class Fragment1 extends Fragment {
         StartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getContext(), "Messung gestartet", Toast.LENGTH_SHORT).show();
                 if(observer == null){
                     observer = (sensorData)->{
                         vendor.setText("Vendor" + sensorData.getSensor().getVendor());
                         name.setText("Name" + sensorData.getSensor().getName());
                         version.setText("Version" + sensorData.getSensor().getVersion());
                         xyz.setText("x:" + sensorData.getP1() + "y:" +sensorData.getP2() + "z:" + sensorData.getP3());
+
                         Memory tempmemory = new Memory(dataname, count, sensorData.getP1(),sensorData.getP2(),sensorData.getP3(),System.currentTimeMillis());
                         datalist.add(tempmemory);
                         // kann weg...
@@ -117,8 +120,12 @@ public class Fragment1 extends Fragment {
                         count=count+1;
                         // eingabe in die Datenbank
                         sensorViewModel.setSensor(tempmemory);
+
+
                         xyz.setText(
                                 "x:" + sensorData.getP1() + "y:" +sensorData.getP2() + "z:" + sensorData.getP3());
+
+
                         //datalist.add(new Memory(count, sensorData.getP1(),sensorData.getP2(),sensorData.getP3(),System.currentTimeMillis()));
                         values1.add(new Entry(count,sensorData.getP1()));
                         values2.add(new Entry(count, sensorData.getP2()));
@@ -142,30 +149,20 @@ public class Fragment1 extends Fragment {
                         lineDataSetZ.setDrawCircleHole(false);
                         lineDataSetZ.setDrawValues(false);
 
-                        //all.add(lineDataSetX);
-                        //all.add(lineDataSetY);
-                        //all.add(lineDataSetZ);
-
-
-                        LineData data1 = new LineData(lineDataSetX);
-
-                        LineData data2 = new LineData(lineDataSetY);
-                        LineData data3 = new LineData(lineDataSetZ);
+                        LineData data1 = new LineData(lineDataSetX,lineDataSetY,lineDataSetZ);
 
                         lineChart.setData(data1);
                         lineChart.invalidate();
-                        lineChart.setData(data2);
-                        lineChart.invalidate();
-                        lineChart.setData(data3);
-                        lineChart.invalidate();
+
+
 
 
                         //  Entscheiden ob alle Senoren oder nur einer
 
+                        if(sensorData.getP1() > 2){
 
-
-
-
+                            Toast.makeText(getContext(), "WARNING! Beschleunigung zu Hoch",Toast.LENGTH_SHORT).show();
+                        }
 
                         count = count + 1;
 
@@ -173,17 +170,23 @@ public class Fragment1 extends Fragment {
 
                     mainViewModel.sensorData.observe(getViewLifecycleOwner(),observer);
                 }
+
             }
+
         });
 
         StopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getContext(), "Messung gestoppt", Toast.LENGTH_SHORT).show();
                 mainViewModel.sensorData.removeObserver(observer);
                 observer = null;
                 xyz.setText("Sie haben die Messung gestoppt." );
                 count = 0;
-                datalist.clear();
+                //datalist.clear();
+                values1.clear();
+                values2.clear();
+                values3.clear();
                 }
         });
 
@@ -191,6 +194,12 @@ public class Fragment1 extends Fragment {
         FeedbackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), "Messung gestoppt", Toast.LENGTH_SHORT).show();
+                mainViewModel.sensorData.removeObserver(observer);
+                observer = null;
+                xyz.setText("Sie haben die Messung gestoppt." );
+                count = 0;
+                //datalist.clear();
 
                 Navigation.findNavController(view).navigate(R.id.action_startFragment_to_zweitesFragment);
             }

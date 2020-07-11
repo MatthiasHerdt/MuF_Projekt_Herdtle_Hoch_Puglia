@@ -1,6 +1,8 @@
 package com.example.muf_projekt_herdtle_hoch_puglia.Database;
 
 import android.app.Application;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 
 import androidx.room.Room;
 
@@ -18,5 +20,7 @@ public class ProjectApplication extends Application {
     public ProjectDatabase getDatabase() {
         return projectDatabase;
     }
+
+
 
 }
