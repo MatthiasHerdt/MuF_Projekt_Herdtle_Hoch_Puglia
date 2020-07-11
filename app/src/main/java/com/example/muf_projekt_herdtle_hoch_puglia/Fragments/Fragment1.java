@@ -1,4 +1,4 @@
-package com.example.muf_projekt_herdtle_hoch_puglia;
+package com.example.muf_projekt_herdtle_hoch_puglia.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +14,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+
+import com.example.muf_projekt_herdtle_hoch_puglia.MainViewModel;
+import com.example.muf_projekt_herdtle_hoch_puglia.Memory;
+import com.example.muf_projekt_herdtle_hoch_puglia.R;
+import com.example.muf_projekt_herdtle_hoch_puglia.SensorData;
 
 import java.util.ArrayList;
 

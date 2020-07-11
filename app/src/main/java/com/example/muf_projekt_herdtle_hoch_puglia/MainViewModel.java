@@ -13,7 +13,7 @@ import androidx.lifecycle.LiveData;
 
 public class MainViewModel extends AndroidViewModel {
 
-    final LiveData<SensorData> sensorData;
+    public LiveData<SensorData> sensorData;
 
     public MainViewModel(@NonNull Application application) {
         super(application);
