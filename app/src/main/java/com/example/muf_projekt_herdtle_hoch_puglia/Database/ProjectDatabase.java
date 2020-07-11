@@ -9,4 +9,6 @@ import com.example.muf_projekt_herdtle_hoch_puglia.Data.Memory;
 @Database(entities = {Memory.class}, version = 1)
 public abstract class ProjectDatabase extends RoomDatabase {
     public abstract dao getSensorDao();
+
+
 }

@@ -67,4 +67,6 @@ public class Memory {
     public void setTime(long time) {
         this.time = time;
     }
+
+
 }
