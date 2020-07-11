@@ -19,6 +19,12 @@
         tools:layout="@layout/fragment_2"
         android:id="@+id/zweitesFragment"
      android:name="com.example.muf_projekt_herdtle_hoch_puglia.Fragments.Fragment2"
-        android:label="SecondFragment"/>
+        android:label="SecondFragment">
+        <action
+            android:id="@+id/action_zweitesFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+
+
 
 </navigation>
