@@ -1,4 +1,4 @@
-package com.example.muf_projekt_herdtle_hoch_puglia;
+package com.example.muf_projekt_herdtle_hoch_puglia.Data;
 
 
 import android.hardware.Sensor;

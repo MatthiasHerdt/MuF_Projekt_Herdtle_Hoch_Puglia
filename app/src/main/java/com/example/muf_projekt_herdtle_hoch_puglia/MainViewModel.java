@@ -11,9 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.muf_projekt_herdtle_hoch_puglia.Data.SensorData;
+
 public class MainViewModel extends AndroidViewModel {
 
-    final LiveData<SensorData> sensorData;
+    public LiveData<SensorData> sensorData;
 
     public MainViewModel(@NonNull Application application) {
         super(application);
