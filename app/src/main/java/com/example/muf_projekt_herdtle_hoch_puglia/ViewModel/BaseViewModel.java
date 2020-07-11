@@ -11,7 +11,6 @@ import com.example.muf_projekt_herdtle_hoch_puglia.Database.ProjectDatabase;
 public abstract class BaseViewModel extends AndroidViewModel {
 
     public BaseViewModel(@NonNull Application application) { super(application); }
-
     public ProjectDatabase getDatabase() {
         return ((ProjectApplication) getApplication()).getDatabase();
     }
