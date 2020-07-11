@@ -81,9 +81,6 @@ public class Fragment1 extends Fragment {
         mainViewModel = new ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(MainViewModel.class);
 
-        view.findViewById(R.id.startButton).setOnClickListener(new View.OnClickListener() {
-        // Line Chart for LiveData
-
         LineChart lineChart = view.findViewById(R.id.LiveDataChart);
         Description desc_x = new Description();
         desc_x.setText("");
@@ -94,6 +91,12 @@ public class Fragment1 extends Fragment {
         ArrayList<Entry> values2 = new ArrayList<Entry>();
         ArrayList<Entry> values3 = new ArrayList<Entry>();
         ArrayList<ILineDataSet> all = new ArrayList<>();
+
+
+        //view.findViewById(R.id.startButton).setOnClickListener(new View.OnClickListener() {
+        // Line Chart for LiveData
+
+
 
 
         //Click Listener Start here
@@ -173,7 +176,7 @@ public class Fragment1 extends Fragment {
             }
         });
 
-        view.findViewById(R.id.stopButton).setOnClickListener(new View.OnClickListener() {
+        StopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainViewModel.sensorData.removeObserver(observer);
