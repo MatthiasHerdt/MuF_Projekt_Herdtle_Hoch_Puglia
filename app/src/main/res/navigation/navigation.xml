@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_startFragment_to_zweitesFragment"
             app:destination="@id/zweitesFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_feedbackfragement"
+            app:destination="@id/feedbackfragement" />
+        <action
+            android:id="@+id/action_startFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
     </fragment>
 
     <fragment
@@ -24,6 +30,27 @@
             android:id="@+id/action_zweitesFragment_to_startFragment"
             app:destination="@id/startFragment" />
     </fragment>
+
+    <fragment
+        tools:layout="@layout/feedback_fragment"
+        android:id="@+id/feedbackfragement"
+        android:name="com.example.muf_projekt_herdtle_hoch_puglia.Fragments.FeedbackFragment"
+        android:label="FeedbackFragment" >
+        <action
+            android:id="@+id/action_feedbackfragement_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/info_fragment"
+        android:id="@+id/infoFragment"
+        android:name="com.example.muf_projekt_herdtle_hoch_puglia.Fragments.InfoFragment"
+        android:label="InfoFragment">
+        <action
+            android:id="@+id/action_infoFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+
 
 
 

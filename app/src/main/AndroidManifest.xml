@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
 
+        <service android:name=".MediaService" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

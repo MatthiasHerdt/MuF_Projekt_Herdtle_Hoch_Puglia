@@ -14,7 +14,7 @@
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/DataChartX"
         android:layout_width="match_parent"
-        android:layout_height="140dp" />
+        android:layout_height="120dp" />
 
     <Button
         android:id="@+id/BeschleunigungX"
@@ -26,7 +26,7 @@
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/DataChartY"
         android:layout_width="match_parent"
-        android:layout_height="140dp" />
+        android:layout_height="120dp" />
 
     <Button
         android:id="@+id/BeschleunigungY"
@@ -39,7 +39,7 @@
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/DataChartZ"
         android:layout_width="match_parent"
-        android:layout_height="140dp" />
+        android:layout_height="120dp" />
 
     <Button
         android:id="@+id/BeschleunigungZ"
@@ -55,6 +55,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:text="Home" />
+
+    <Button
+        android:id="@+id/specialButton"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="? "
+        android:layout_gravity="center"/>
 
 
 
