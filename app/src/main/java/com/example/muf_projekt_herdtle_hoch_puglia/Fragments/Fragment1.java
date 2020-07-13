@@ -1,7 +1,12 @@
 package com.example.muf_projekt_herdtle_hoch_puglia.Fragments;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +26,13 @@ import androidx.navigation.Navigation;
 
 import com.example.muf_projekt_herdtle_hoch_puglia.MainViewModel;
 import com.example.muf_projekt_herdtle_hoch_puglia.Data.Memory;
+import com.example.muf_projekt_herdtle_hoch_puglia.MediaService;
 import com.example.muf_projekt_herdtle_hoch_puglia.R;
 import com.example.muf_projekt_herdtle_hoch_puglia.Data.SensorData;
 import com.example.muf_projekt_herdtle_hoch_puglia.ViewModel.SensorViewModel;
+
+import com.example.muf_projekt_herdtle_hoch_puglia.MediaService;
+import com.example.muf_projekt_herdtle_hoch_puglia.R;
 
 
 import java.util.ArrayList;
@@ -38,6 +47,10 @@ public class Fragment1 extends Fragment {
     private Observer<SensorData> observer;
     private ArrayList<Memory> datalist;
     private int count = 0;
+
+    private Button ding;
+    private MediaServiceConenction mediaServiceConnection = null;
+    private MediaService.MediaBinder mediaBinder;
 
 
 
@@ -69,6 +82,8 @@ public class Fragment1 extends Fragment {
 
         final Button StartButton = view.findViewById(R.id.startButton);
         final Button FeedbackButton = view.findViewById(R.id.feedbackButton);
+
+        final Button Special = view.findViewById(R.id.specialButton);
 
         final Button InfoButton = view.findViewById(R.id.infoButton);
 
@@ -116,6 +131,51 @@ public class Fragment1 extends Fragment {
             }
         });
 
+        Special.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(mediaBinder == null) return;
+                mediaBinder.play(R.raw.dings);
+            }
+        });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mediaServiceConnection == null) {
+            getActivity().bindService(
+                    new Intent(getContext(), MediaService.class),
+                    mediaServiceConnection = new MediaServiceConenction(),
+                    Context.BIND_AUTO_CREATE
+            );
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mediaServiceConnection != null) {
+            getActivity().unbindService(mediaServiceConnection);
+            mediaServiceConnection = null;
+        }
+    }
+
+    private final class MediaServiceConenction implements ServiceConnection {
+
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mediaBinder = (MediaService.MediaBinder) service;
+
+
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mediaBinder = null;
+
+        }
     }
 
 

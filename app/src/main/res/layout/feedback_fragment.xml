@@ -3,55 +3,94 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="@color/colorBackground">
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorInfo"
+        android:drawableBottom="@drawable/ic_home_24px"
+        android:padding="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
 
     <TextView
         android:layout_width="match_parent"
         android:gravity="center"
         android:textSize="35sp"
         android:layout_height="wrap_content"
-        android:text="Live Feedback"/>
+        android:text="Live Feedback"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical"
+        />
+
     <TextView
         android:id="@+id/vendor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <TextView
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <TextView
         android:id="@+id/version"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <TextView
         android:id="@+id/xyz"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
-
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical"
+        />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/LiveData"
         android:layout_width="match_parent"
-        android:layout_height="280dp" />
+        android:layout_height="280dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical"
+        />
 
     <Button
         android:id="@+id/stoppen"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Button_Stop"/>
-
-    <Button
-        android:id="@+id/HomeButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:drawableRight="@android:drawable/button_onoff_indicator_off"
-        android:drawableBottom="@android:color/holo_green_dark"
-        />
+        android:layout_gravity="center"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorStop"
+        android:padding="10dp"
+        android:text="@string/Button_Stop" />
 
 </LinearLayout>

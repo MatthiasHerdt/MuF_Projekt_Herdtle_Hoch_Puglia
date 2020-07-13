@@ -28,9 +28,9 @@ import static android.content.Context.BIND_AUTO_CREATE;
 
 public class Fragment2 extends Fragment {
 
-    private Button ding;
+    /*private Button ding;
     private MediaServiceConenction mediaServiceConnection = null;
-    private MediaService.MediaBinder mediaBinder;
+    private MediaService.MediaBinder mediaBinder;*/
 
 
     @Nullable
@@ -43,8 +43,8 @@ public class Fragment2 extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        final Button HomeBildschrim = view.findViewById(R.id.BackToHome);
-        final Button Special = view.findViewById(R.id.specialButton);
+        final Button HomeBildschrim = view.findViewById(R.id.back);
+        //final Button Special = view.findViewById(R.id.specialButton);
 
         HomeBildschrim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,22 +53,21 @@ public class Fragment2 extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_zweitesFragment_to_startFragment);
             }
         });
-
-        Special.setOnClickListener(new View.OnClickListener() {
+        /*Special.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if(mediaBinder == null) return;
                 mediaBinder.play(R.raw.dings);
             }
-        });
+        });*/
 
     }
 
 
 
 
-    @Override
+    /*@Override
     public void onResume() {
         super.onResume();
         if (mediaServiceConnection == null) {
@@ -103,5 +102,5 @@ public class Fragment2 extends Fragment {
             mediaBinder = null;
 
         }
-    }
+    }*/
 }

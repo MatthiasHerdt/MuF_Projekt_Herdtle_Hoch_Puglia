@@ -2,69 +2,99 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="@color/colorBackground">
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorInfo"
+        android:drawableBottom="@drawable/ic_home_24px"
+        android:padding="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Feedback"
+        android:layout_height="wrap_content"
+        android:text="@string/Feedback"
         android:textSize="35dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/DataChartX"
         android:layout_width="match_parent"
-        android:layout_height="120dp" />
+        android:layout_height="120dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <Button
         android:id="@+id/BeschleunigungX"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:text="Beschleunigungen in X "
-        android:layout_gravity="center"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorFeedback"
+        android:padding="10dp"
+        android:text="Beschleunigungen in X "/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/DataChartY"
         android:layout_width="match_parent"
-        android:layout_height="120dp" />
+        android:layout_height="120dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <Button
         android:id="@+id/BeschleunigungY"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:text="Beschleunigungen in Y "
-        android:layout_gravity="center"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorFeedback"
+        android:padding="10dp"
+        android:text="Beschleunigungen in Y " />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/DataChartZ"
         android:layout_width="match_parent"
-        android:layout_height="120dp" />
+        android:layout_height="120dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <Button
         android:id="@+id/BeschleunigungZ"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:text="Beschleunigungen in Z "
-        android:layout_gravity="center"/>
-
-
-    <Button
-        android:id="@+id/BackToHome"
-        android:layout_width="70dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="Home" />
-
-    <Button
-        android:id="@+id/specialButton"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:text="? "
-        android:layout_gravity="center"/>
-
-
-
-
+        android:layout_gravity="center"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorFeedback"
+        android:padding="10dp"
+        android:text="Beschleunigungen in Z " />
 
 </LinearLayout>

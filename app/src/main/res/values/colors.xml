@@ -3,4 +3,11 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="colorStart">#9967BA51</color>
+    <color name="colorFeedback">#996798E1</color>
+    <color name="colorInfo">#99ABABAB</color>
+    <color name="colorBackground">#FFF4F4C4</color>
+    <color name="colorStop">#99DF0000</color>
+    <color name="colorDingding">#99DF7ABA</color>
+
 </resources>

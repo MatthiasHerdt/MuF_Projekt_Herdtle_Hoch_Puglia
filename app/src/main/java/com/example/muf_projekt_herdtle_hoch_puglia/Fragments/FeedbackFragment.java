@@ -52,7 +52,7 @@ public class FeedbackFragment extends Fragment {
         final TextView xyz = view.findViewById(R.id.xyz);
 
         final Button StopButton = view.findViewById(R.id.stoppen);
-        final Button HomeButton = view.findViewById(R.id.HomeButton);
+        final Button HomeButton = view.findViewById(R.id.back);
 
         LineChart lineChart = view.findViewById(R.id.LiveData);
         Description desc_x = new Description();

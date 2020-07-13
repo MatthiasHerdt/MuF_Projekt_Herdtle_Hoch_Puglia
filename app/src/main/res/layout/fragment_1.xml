@@ -4,41 +4,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:backgroundTint="@color/colorBackground"
     android:orientation="vertical">
+
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="165dp"
         android:layout_height="83dp"
-        android:layout_gravity="right"
-        android:src="@mipmap/logo2" />
+        android:layout_gravity="end"
+        android:contentDescription="@string/logoFH"
+        android:background="@drawable/ic_logofh"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:gravity="center"
         android:text="@string/Ueberschrift"
-        android:textSize="35dp" />
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="30sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
 
     <Button
         android:id="@+id/startButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorStart"
+        android:padding="10dp"
         android:text="@string/Button_Start" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
 
     <Button
         android:id="@+id/feedbackButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feedback" />
+        android:layout_gravity="center"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorFeedback"
+        android:padding="10dp"
+        android:text="@string/Feedback" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
+
+    <Button
+        android:id="@+id/specialButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorDingding"
+        android:padding="10dp"
+        android:text="?"
+        android:drawableBottom="@drawable/ic_engineering_24px"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical" />
 
     <Button
         android:id="@+id/infoButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:drawableBottom="@android:drawable/ic_menu_info_details"/>
+        android:layout_gravity="end"
+        android:background="@drawable/mybutton"
+        android:backgroundTint="@color/colorInfo"
+        android:drawableBottom="@android:drawable/ic_menu_info_details"
+        android:padding="10dp" />
 </LinearLayout>
