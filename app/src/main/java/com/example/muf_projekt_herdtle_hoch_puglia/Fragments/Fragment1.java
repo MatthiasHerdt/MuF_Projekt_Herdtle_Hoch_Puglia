@@ -20,10 +20,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.room.Database;
 
+import com.example.muf_projekt_herdtle_hoch_puglia.Database.ProjectApplication;
+import com.example.muf_projekt_herdtle_hoch_puglia.Database.ProjectDatabase;
 import com.example.muf_projekt_herdtle_hoch_puglia.MainViewModel;
 import com.example.muf_projekt_herdtle_hoch_puglia.Data.Memory;
 import com.example.muf_projekt_herdtle_hoch_puglia.MediaService;
@@ -101,6 +105,14 @@ public class Fragment1 extends Fragment {
                 Toast.makeText(getContext(), "Messung gestartet", Toast.LENGTH_SHORT).show();
                 Navigation.findNavController(view).navigate(R.id.action_startFragment_to_feedbackfragement);
 
+
+
+
+
+
+
+
+
             }
 
         });
@@ -139,6 +151,8 @@ public class Fragment1 extends Fragment {
                 mediaBinder.play(R.raw.dings);
             }
         });
+
+
     }
 
     @Override
