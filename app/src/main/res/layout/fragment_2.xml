@@ -36,13 +36,13 @@
         android:layout_height="120dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
-    <Button
+    <TextView
         android:id="@+id/BeschleunigungX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/mybutton"
-        android:backgroundTint="@color/colorFeedback"
+        android:backgroundTint="@color/cardview_light_background"
         android:padding="10dp"
         android:text="@string/FeedbackButton1"/>
 
@@ -55,13 +55,13 @@
         android:layout_height="120dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
-    <Button
+    <TextView
         android:id="@+id/BeschleunigungY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/mybutton"
-        android:backgroundTint="@color/colorFeedback"
+        android:backgroundTint="@color/cardview_light_background"
         android:padding="10dp"
         android:text="@string/FeedbackButton2" />
 
@@ -73,14 +73,16 @@
         android:layout_height="120dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
-    <Button
+    <TextView
         android:id="@+id/BeschleunigungZ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/mybutton"
-        android:backgroundTint="@color/colorFeedback"
+        android:backgroundTint="@color/cardview_light_background"
         android:padding="10dp"
         android:text="@string/FeedbackButton3" />
+
+
 
 </LinearLayout>

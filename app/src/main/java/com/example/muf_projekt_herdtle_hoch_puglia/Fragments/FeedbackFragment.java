@@ -2,6 +2,7 @@ package com.example.muf_projekt_herdtle_hoch_puglia.Fragments;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,10 @@ import androidx.navigation.Navigation;
 
 import com.example.muf_projekt_herdtle_hoch_puglia.Data.Memory;
 import com.example.muf_projekt_herdtle_hoch_puglia.Data.SensorData;
+import com.example.muf_projekt_herdtle_hoch_puglia.Database.ProjectApplication;
 import com.example.muf_projekt_herdtle_hoch_puglia.MainViewModel;
 import com.example.muf_projekt_herdtle_hoch_puglia.R;
+import com.example.muf_projekt_herdtle_hoch_puglia.ViewModel.SensorViewModel;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
@@ -28,13 +31,25 @@ import com.github.mikephil.charting.data.LineDataSet;
 
 import java.util.ArrayList;
 
+import static android.content.ContentValues.TAG;
+
 public class FeedbackFragment extends Fragment {
 
     private MainViewModel mainViewModel;
+    private SensorViewModel sensorViewModel;
     private Observer<SensorData> observer;
     private ArrayList<Memory> datalist;
     private int count = 0;
+    private String filename = "Messung";
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        sensorViewModel = new ViewModelProvider(getActivity(),
+                ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().
+                        getApplication())).get(SensorViewModel.class);
+    }
 
     @Nullable
     @Override
@@ -54,13 +69,18 @@ public class FeedbackFragment extends Fragment {
         final Button StopButton = view.findViewById(R.id.stoppen);
         final Button HomeButton = view.findViewById(R.id.back);
 
+
+
         LineChart lineChart = view.findViewById(R.id.LiveData);
         Description desc_x = new Description();
         desc_x.setText("");
         lineChart.setDescription(desc_x);
         lineChart.setDrawGridBackground(false);
 
+        observer = null;
         datalist = new ArrayList<>();
+        //
+        // count = 0;
         mainViewModel = new ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(MainViewModel.class);
 
@@ -68,13 +88,20 @@ public class FeedbackFragment extends Fragment {
         ArrayList<Entry> values2 = new ArrayList<Entry>();
         ArrayList<Entry> values3 = new ArrayList<Entry>();
 
-        if(observer == null){
+
+       if(observer == null){
             observer = (sensorData)->{
 
-                vendor.setText("Vendor" + sensorData.getSensor().getVendor());
+                //vendor.setText("Vendor" + sensorData.getSensor().getVendor());
                 name.setText("Name" + sensorData.getSensor().getName());
                 version.setText("Version" + sensorData.getSensor().getVersion());
-                xyz.setText("x:" + sensorData.getP1() + "y:" +sensorData.getP2() + "z:" + sensorData.getP3());
+
+
+                Memory tempmemory = new Memory(filename, sensorData.getP1(), sensorData.getP2(), sensorData.getP3(), System.currentTimeMillis(), count);
+                datalist.add(tempmemory);
+                sensorViewModel.setSensor(tempmemory);
+                Log.d(TAG, "onCreate Daten: " + tempmemory.getX());
+
 
                 values1.add(new Entry(count,sensorData.getP1()));
                 values2.add(new Entry(count, sensorData.getP2()));
@@ -97,6 +124,10 @@ public class FeedbackFragment extends Fragment {
                 lineDataSetZ.setDrawCircles(false);
                 lineDataSetZ.setDrawCircleHole(false);
                 lineDataSetZ.setDrawValues(false);
+
+
+
+
 
                 LineData data1 = new LineData(lineDataSetX,lineDataSetY,lineDataSetZ);
 
@@ -132,7 +163,6 @@ public class FeedbackFragment extends Fragment {
                     Toast.makeText(getContext(), "Messung gestoppt", Toast.LENGTH_SHORT).show();
 
                 }
-
 
                 mainViewModel.sensorData.removeObserver(observer);
                 observer = null;

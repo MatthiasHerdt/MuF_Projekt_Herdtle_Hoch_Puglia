@@ -16,7 +16,7 @@ public class Memory {
     private float z;
     private long time;
 
-    public Memory(String dataname, float x, float y, float z, long time) {
+    public Memory(String dataname, float x, float y, float z, long time, int idline) {
 
         this.x = x;
         this.y = y;
@@ -26,6 +26,10 @@ public class Memory {
         this.dataname = dataname;
     }
 
+
+    public void deleteAll(){
+
+    }
     public String getDataname() { return dataname;}
 
     public void setDataname(String dataname) { this.dataname = dataname;}
