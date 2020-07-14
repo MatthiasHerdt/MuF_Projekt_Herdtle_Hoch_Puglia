@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:backgroundTint="@color/colorBackground"
     android:orientation="vertical">
 
     <Button
@@ -13,21 +12,19 @@
         android:layout_height="50dp"
         android:layout_gravity="start"
         android:background="@drawable/mybutton"
+        android:gravity="center"
         android:backgroundTint="@color/colorInfo"
         android:drawableBottom="@drawable/ic_home_24px"
         android:padding="10dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="vertical" />
+
 
 
     <TextView
         android:layout_width="match_parent"
+        android:layout_marginTop="100dp"
         android:layout_height="wrap_content"
-        android:text="Informationen:"
+        android:text="@string/Ueberschrift1"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="15sp"/>
@@ -35,19 +32,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Diese App erlaubt es Sensordaten des Beschleunigungssensor auszulesen. Die Daten werden in einer Datenbank abgespeichet. Visuelles Feedback wird mittels eines Graph, der die Live Beschleunigungen darstellt, gegeben."
+        android:layout_marginTop="10dp"
+        android:text="@string/Informationen"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center|bottom"
-        android:orientation="vertical" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sensordaten:"
+        android:layout_marginTop="20dp"
+        android:text="@string/Ueberschrift2"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="15sp"/>
@@ -55,19 +48,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Der Sensor stellt die Beschleunigungen in X-Richtung, Y-Richtung und Z-Richtung dar."
+        android:layout_marginTop="10dp"
+        android:text="@string/Sensordaten"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center|bottom"
-        android:orientation="vertical" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Daten aufzeichnen:"
+        android:layout_marginTop="20dp"
+        android:text="@string/Ueberschrift3"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="15sp"/>
@@ -75,7 +64,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Die Messung wird mit dem Button -Start- begonnen. Mit -Stop- kann die Messung beendet werden. -Feedback- stellt die aufgenommenen Daten dar."
+        android:layout_marginTop="10dp"
+        android:text="@string/DatenAufzeichnen"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <LinearLayout

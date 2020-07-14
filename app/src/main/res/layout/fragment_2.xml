@@ -3,8 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="@color/colorBackground">
+    android:background="#FFFFFF">
 
     <Button
         android:id="@+id/back"
@@ -12,15 +11,12 @@
         android:layout_height="50dp"
         android:layout_gravity="start"
         android:background="@drawable/mybutton"
+        android:gravity="center"
         android:backgroundTint="@color/colorInfo"
         android:drawableBottom="@drawable/ic_home_24px"
         android:padding="10dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center|bottom"
-        android:orientation="vertical" />
+
 
     <TextView
         android:layout_width="match_parent"
@@ -31,14 +27,11 @@
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center|bottom"
-        android:orientation="vertical" />
+
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/DataChartX"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
@@ -51,16 +44,13 @@
         android:background="@drawable/mybutton"
         android:backgroundTint="@color/colorFeedback"
         android:padding="10dp"
-        android:text="Beschleunigungen in X "/>
+        android:text="@string/FeedbackButton1"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center|bottom"
-        android:orientation="vertical" />
+
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/DataChartY"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
@@ -73,16 +63,12 @@
         android:background="@drawable/mybutton"
         android:backgroundTint="@color/colorFeedback"
         android:padding="10dp"
-        android:text="Beschleunigungen in Y " />
+        android:text="@string/FeedbackButton2" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center|bottom"
-        android:orientation="vertical" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/DataChartZ"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
@@ -95,6 +81,6 @@
         android:background="@drawable/mybutton"
         android:backgroundTint="@color/colorFeedback"
         android:padding="10dp"
-        android:text="Beschleunigungen in Z " />
+        android:text="@string/FeedbackButton3" />
 
 </LinearLayout>

@@ -5,4 +5,14 @@
     <string name="Ueberschrift">Sensordatenerfassung</string>
     <string name="Feedback">Feedback</string>
     <string name="logoFH">logoFH</string>
+    <string name="Ueberschrift1">Informationen:</string>
+    <string name="Informationen">Diese App erlaubt es, die Daten des Beschleunigungssensors auszulesen. Die Daten werden in einer Datenbank abgespeichert. Visuelles Feedback wird mittels eines Graphen, der die Live Beschleunigungen darstellt, gegeben.</string>
+    <string name="Ueberschrift2">Sensordaten:</string>
+    <string name="Sensordaten">Der Sensor stellt die Beschleunigungen in X-Richtung, Y-Richtung und Z-Richtung dar.</string>
+    <string name="Ueberschrift3">Daten aufzeichnen:</string>
+    <string name="DatenAufzeichnen">Die Messung wird mit dem Button -Start- begonnen. Mit -Stop- kann die Messung beendet werden. -Feedback- stellt die aufgenommenen Daten dar.</string>
+    <string name="FeedbackButton1">Beschleunigungen in X</string>
+    <string name="FeedbackButton2">Beschleunigungen in Y</string>
+    <string name="FeedbackButton3">Beschleunigungen in Z</string>
+    <string name="UeberschriftLiveFeedback">Live Feedback</string>
 </resources>
