@@ -27,7 +27,6 @@ public abstract class dao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public abstract long insert(Memory memory);
 
-    @Delete
-    public abstract void deleteDaten(Memory memory);
+
 
 }
